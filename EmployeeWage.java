@@ -16,13 +16,19 @@ public class EmployeeWage {
 		int partTimeHour = 4;
 		int randomNum = random.nextInt(2);
 		
-		if(randomNum == 1) {
+		switch(randomNum) {
+		case 1 :
 			System.out.println("Full Time");
 			dailyWage = fullDayHour * wagePerHour;
-		} else if(randomNum == 2) {
+			break;
+		case 2 :
 			System.out.println("Part Time");
 			dailyWage = partTimeHour * wagePerHour;
-		}else System.out.println("Employee is absent");
+			break;
+		default: System.out.println("Employee is absent");
+		}
+		
 			System.out.println("Employee total daily Wage is: " +dailyWage);
-	}
+		
+		}
 }
