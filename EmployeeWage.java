@@ -16,11 +16,11 @@ public class EmployeeWage {
 		int partTimeHour = 4;
 		int monthlySalary = 0;
 		int totalWorkingDays = 20;
+		int workingHours = 0;
 		
-		for(int i = 1; i <= totalWorkingDays; i++) {
+		while(workingHours!=100 && totalWorkingDays!=20 ) {
 			
-
-		int randomNum = random.nextInt(3);
+			int randomNum = random.nextInt(3);
 		
 		switch(randomNum) {
 		case 1 :
@@ -33,9 +33,11 @@ public class EmployeeWage {
 			break;
 		default: System.out.println("Employee is absent");
 		}
-		monthlySalary = monthlySalary + dailyWage;
-		
+		 totalWorkingDays++;
+	     monthlySalary = monthlySalary + dailyWage;
+	     System.out.println("Day: "+totalWorkingDays+" Wage: "+dailyWage+" Work Hours: "+workingHours);
 		}
-		System.out.println("monthly salary : " +monthlySalary);
+		 System.out.println("Monthly Salary: "+monthlySalary);
+
 	}
 }
