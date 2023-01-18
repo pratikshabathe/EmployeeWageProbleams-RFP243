@@ -4,16 +4,12 @@ import java.util.Random;
 
 public class EmployeeWage {
 
-	static void calculateWage() {
-		//create calculate wage method
+	static void calculateWage(String company, int WAGE_PER_HOUR, int TOTAL_WORKING_DAYS, int WORKING_HOURS  ) {
 		
-		int WAGE_PER_HOUR = 20;
 		int FULL_DAY_HOUR = 8;
 		int DAILY_WAGE = 0;
 		int PART_TIME_HOUR = 4;
 		int MONTHLY_SALARY = 0;
-		int TOTAL_WORKING_DAYS = 20;
-		int WORKING_HOURS = 0;
 		
 		Random random = new Random();
 		while(WORKING_HOURS!=100 && TOTAL_WORKING_DAYS!=20 ) {
@@ -33,7 +29,7 @@ public class EmployeeWage {
 		}
 		TOTAL_WORKING_DAYS++;
 		 MONTHLY_SALARY = MONTHLY_SALARY + DAILY_WAGE;
-	     System.out.println("Day: "+TOTAL_WORKING_DAYS+" Wage: "+DAILY_WAGE+"Work Hours: "+WORKING_HOURS);
+	     System.out.println("Day: "+TOTAL_WORKING_DAYS+" Wage: "+DAILY_WAGE+" Work Hours: "+WORKING_HOURS);
 		}
 		 System.out.println("Monthly Salary: "+ MONTHLY_SALARY);
 	}
@@ -41,6 +37,9 @@ public class EmployeeWage {
 	public static void main(String[] args) {
 		
 		System.out.println("Welcome to employee wage computation program");
-		calculateWage();
+		calculateWage("Amazon ", 20, 2, 10);
+		calculateWage("Meesho ", 10, 4, 20);
+		calculateWage("Reliance ", 10, 3, 10);
+		calculateWage("Flipcart ", 15, 5, 30);
 	}
 }
