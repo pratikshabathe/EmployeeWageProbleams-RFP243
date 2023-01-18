@@ -1,43 +1,46 @@
-package com.blz.empwage;
+package com.bridgelabz.employee_wage;
 
 import java.util.Random;
 
 public class EmployeeWage {
 
-	public static void main(String[] args) {
+	static void calculateWage() {
+		//create calculate wage method
 		
-		System.out.println("Welcome to employee wage computation program");
+		int WAGE_PER_HOUR = 20;
+		int FULL_DAY_HOUR = 8;
+		int DAILY_WAGE = 0;
+		int PART_TIME_HOUR = 4;
+		int MONTHLY_SALARY = 0;
+		int TOTAL_WORKING_DAYS = 20;
+		int WORKING_HOURS = 0;
 		
 		Random random = new Random();
-		
-		int wagePerHour = 20;
-		int fullDayHour = 8;
-		int dailyWage =0;
-		int partTimeHour = 4;
-		int monthlySalary = 0;
-		int totalWorkingDays = 20;
-		int workingHours = 0;
-		
-		while(workingHours!=100 && totalWorkingDays!=20 ) {
+		while(WORKING_HOURS!=100 && TOTAL_WORKING_DAYS!=20 ) {
 			
 			int randomNum = random.nextInt(3);
 		
 		switch(randomNum) {
 		case 1 :
 			System.out.println("Full Time");
-			dailyWage = fullDayHour * wagePerHour;
+			DAILY_WAGE = FULL_DAY_HOUR * WAGE_PER_HOUR;
 			break;
 		case 2 :
 			System.out.println("Part Time");
-			dailyWage = partTimeHour * wagePerHour;
+			DAILY_WAGE = PART_TIME_HOUR  * WAGE_PER_HOUR;
 			break;
 		default: System.out.println("Employee is absent");
 		}
-		 totalWorkingDays++;
-	     monthlySalary = monthlySalary + dailyWage;
-	     System.out.println("Day: "+totalWorkingDays+" Wage: "+dailyWage+" Work Hours: "+workingHours);
+		TOTAL_WORKING_DAYS++;
+		 MONTHLY_SALARY = MONTHLY_SALARY + DAILY_WAGE;
+	     System.out.println("Day: "+TOTAL_WORKING_DAYS+" Wage: "+DAILY_WAGE+"Work Hours: "+WORKING_HOURS);
 		}
-		 System.out.println("Monthly Salary: "+monthlySalary);
-
+		 System.out.println("Monthly Salary: "+ MONTHLY_SALARY);
+	}
+	
+	public static void main(String[] args) {
+		
+		System.out.println("Welcome to employee wage computation program");
+		calculateWage();
 	}
 }
