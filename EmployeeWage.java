@@ -4,12 +4,29 @@ import java.util.Random;
 
 public class EmployeeWage {
 
-	static void calculateWage(String company, int WAGE_PER_HOUR, int TOTAL_WORKING_DAYS, int WORKING_HOURS  ) {
+	private static final int WAGE_PER_HOUR = 0;
+	private String company;
+	private int daysPerMonth;
+	private int wagePerHr;
+	private int workHrPerMonth;
+
+	public EmployeeWage(String company, int WAGE_PER_HOUR, int TOTAL_WORKING_DAYS, int WORKING_HOURS) {
+		
+		this.company = company;
+		this.wagePerHr = WAGE_PER_HOUR;
+		this.daysPerMonth =  TOTAL_WORKING_DAYS;
+		this.workHrPerMonth = WORKING_HOURS;
+	}
+
+	static void calculateWage() {
 		
 		int FULL_DAY_HOUR = 8;
 		int DAILY_WAGE = 0;
 		int PART_TIME_HOUR = 4;
 		int MONTHLY_SALARY = 0;
+		int TOTAL_WORKING_DAYS = 1;
+		int WORKING_HOURS = 0;
+		int WAGE_PER_HOUR = 0;
 		
 		Random random = new Random();
 		while(WORKING_HOURS!=100 && TOTAL_WORKING_DAYS!=20 ) {
@@ -37,9 +54,18 @@ public class EmployeeWage {
 	public static void main(String[] args) {
 		
 		System.out.println("Welcome to employee wage computation program");
-		calculateWage("Amazon ", 20, 2, 10);
-		calculateWage("Meesho ", 10, 4, 20);
-		calculateWage("Reliance ", 10, 3, 10);
-		calculateWage("Flipcart ", 15, 5, 30);
+		EmployeeWage amazon = new EmployeeWage("Amazon", 20, 4, 10);
+		EmployeeWage meesho = new EmployeeWage("Meesho", 10, 2, 20);
+		EmployeeWage reliance = new EmployeeWage("Reliance", 30, 5, 10);
+		EmployeeWage flipcart= new EmployeeWage("Flipcart", 10, 7, 30);
+		
+		amazon.calculateWage();
+		System.out.println(amazon);
+		meesho .calculateWage();
+		System.out.println(meesho );
+		reliance.calculateWage();
+		System.out.println(reliance);
+		flipcart.calculateWage();
+		System.out.println( flipcart);
 	}
 }
